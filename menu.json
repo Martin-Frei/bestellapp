@@ -1,0 +1,107 @@
+{
+    "hauptgerichte": {
+      "pizza": [
+        {
+          "name": "Pizza Margherita",
+          "zutaten": ["Tomatensauce", "Mozzarella"],
+          "preis": 7.5
+        },
+        {
+          "name": "Pizza Salami",
+          "zutaten": ["Tomatensauce", "Salami"],
+          "preis": 8.0
+        },
+        {
+          "name": "Pizza Funghi",
+          "zutaten": ["Tomatensauce", "Champignons"],
+          "preis": 8.0
+        },
+        {
+          "name": "Pizza Tonno",
+          "zutaten": ["Tomatensauce", "Thunfisch"],
+          "preis": 8.5
+        },
+        {
+          "name": "Pizza Prosciutto",
+          "zutaten": ["Tomatensauce", "Schinken"],
+          "preis": 8.5
+        }
+      ],
+      "nudeln": [
+        {
+          "name": "Spaghetti Bolognese",
+          "zutaten": ["Hackfleischsoße", "Parmesan"],
+          "preis": 9.0
+        },
+        {
+          "name": "Penne Arrabiata",
+          "zutaten": ["Tomaten", "Chili"],
+          "preis": 8.0
+        },
+        {
+          "name": "Tagliatelle al Pesto",
+          "zutaten": ["Pesto", "Pinienkerne"],
+          "preis": 8.5
+        }
+      ]
+    },
+    "salate": [
+      {
+        "name": "Insalata Mista",
+        "zutaten": ["Blattsalat", "Tomaten"],
+        "preis": 5.0
+      },
+      {
+        "name": "Insalata Caprese",
+        "zutaten": ["Mozzarella", "Tomaten"],
+        "preis": 6.5
+      },
+      {
+        "name": "Rucola-Salat",
+        "zutaten": ["Rucola", "Parmesan"],
+        "preis": 6.0
+      },
+      {
+        "name": "Bauernsalat",
+        "zutaten": ["Paprika", "Feta"],
+        "preis": 6.5
+      }
+    ],
+    "getraenke": {
+      "biere": [
+        {
+          "name": "Birra Moretti",
+          "menge": "0.5l",
+          "preis": 3.5
+        },
+        {
+          "name": "Peroni",
+          "menge": "0.5l",
+          "preis": 3.8
+        },
+        {
+          "name": "Becks",
+          "menge": "0.5l",
+          "preis": 3.2
+        }
+      ],
+      "limonaden": [
+        {
+          "name": "San Pellegrino Orange",
+          "menge": "0.5l",
+          "preis": 2.5
+        },
+        {
+          "name": "San Pellegrino Zitrone",
+          "menge": "0.5l",
+          "preis": 2.5
+        },
+        {
+          "name": "Coca Cola",
+          "menge": "0.5l",
+          "preis": 2.2
+        }
+      ]
+    }
+  }
+  

@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    background-image: url("img/salad1.jpg");
+    width: 100%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+    border-top: 10px solid green;
+    border-bottom: 10px solid red;
+
+}
+
+.header h1{
+    padding-left: 50px;
+    line-height: 30vh;
+}
+
+.main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.card{
+    background-color: aquamarine;
+    width: 30%;
+    height: 100vh;
+    overflow-y: scroll;
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.menu-container{
+    width: 70%;
+    height: auto;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+.button{
+    width: 120px;
+    height: 40px;
+    margin-top: 10px;
+    background-color: red;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.menu{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 12px;
+    padding: 50px;
+}
+
+.dish{
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.dish img{
+    width: 100%;
+}

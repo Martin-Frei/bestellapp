@@ -1,107 +1,116 @@
+
 {
-    "hauptgerichte": {
-      "pizza": [
-        {
-          "name": "Pizza Margherita",
-          "zutaten": ["Tomatensauce", "Mozzarella"],
-          "preis": 7.5
-        },
-        {
-          "name": "Pizza Salami",
-          "zutaten": ["Tomatensauce", "Salami"],
-          "preis": 8.0
-        },
-        {
-          "name": "Pizza Funghi",
-          "zutaten": ["Tomatensauce", "Champignons"],
-          "preis": 8.0
-        },
-        {
-          "name": "Pizza Tonno",
-          "zutaten": ["Tomatensauce", "Thunfisch"],
-          "preis": 8.5
-        },
-        {
-          "name": "Pizza Prosciutto",
-          "zutaten": ["Tomatensauce", "Schinken"],
-          "preis": 8.5
-        }
-      ],
-      "nudeln": [
-        {
-          "name": "Spaghetti Bolognese",
-          "zutaten": ["Hackfleischsoße", "Parmesan"],
-          "preis": 9.0
-        },
-        {
-          "name": "Penne Arrabiata",
-          "zutaten": ["Tomaten", "Chili"],
-          "preis": 8.0
-        },
-        {
-          "name": "Tagliatelle al Pesto",
-          "zutaten": ["Pesto", "Pinienkerne"],
-          "preis": 8.5
-        }
-      ]
+  "pizza": [
+    {
+      "name": "Pizza Margherita",
+      "description": "Pizza mit Tomatensauce und Mozzarella",
+      "price": 7.50,
+      "image": "img/pizza1.jpg"
     },
-    "salate": [
-      {
-        "name": "Insalata Mista",
-        "zutaten": ["Blattsalat", "Tomaten"],
-        "preis": 5.0
-      },
-      {
-        "name": "Insalata Caprese",
-        "zutaten": ["Mozzarella", "Tomaten"],
-        "preis": 6.5
-      },
-      {
-        "name": "Rucola-Salat",
-        "zutaten": ["Rucola", "Parmesan"],
-        "preis": 6.0
-      },
-      {
-        "name": "Bauernsalat",
-        "zutaten": ["Paprika", "Feta"],
-        "preis": 6.5
-      }
-    ],
-    "getraenke": {
-      "biere": [
-        {
-          "name": "Birra Moretti",
-          "menge": "0.5l",
-          "preis": 3.5
-        },
-        {
-          "name": "Peroni",
-          "menge": "0.5l",
-          "preis": 3.8
-        },
-        {
-          "name": "Becks",
-          "menge": "0.5l",
-          "preis": 3.2
-        }
-      ],
-      "limonaden": [
-        {
-          "name": "San Pellegrino Orange",
-          "menge": "0.5l",
-          "preis": 2.5
-        },
-        {
-          "name": "San Pellegrino Zitrone",
-          "menge": "0.5l",
-          "preis": 2.5
-        },
-        {
-          "name": "Coca Cola",
-          "menge": "0.5l",
-          "preis": 2.2
-        }
-      ]
+    {
+      "name": "Pizza Salami",
+      "description": "Pizza mit Tomatensauce und Salami",
+      "price": 8.00,
+      "image": "img/pizza1.jpg"
+    },
+    {
+      "name": "Pizza Funghi",
+      "description": "Pizza mit Tomatensauce und Champignons",
+      "price": 8.00,
+      "image": "img/pizza1.jpg"
+    },
+    {
+      "name": "Pizza Tonno",
+      "description": "Pizza mit Tomatensauce und Thunfisch",
+      "price": 8.50,
+      "image": "img/pizza1.jpg"
+    },
+    {
+      "name": "Pizza Prosciutto",
+      "description": "Pizza mit Tomatensauce und Schinken",
+      "price": 8.50,
+      "image": "img/pizza1.jpg"
     }
-  }
+  ],
+  "nudeln": [
+    {
+      "name": "Spaghetti Bolognese",
+      "description": "Nudelgericht mit Hackfleischsoße und Parmesan",
+      "price": 9.00
+    },
+    {
+      "name": "Penne Arrabiata",
+      "description": "Nudelgericht mit Tomaten und Chili",
+      "price": 8.00,
+      "image": "img/nudeln1.jpg"
+    },
+    {
+      "name": "Tagliatelle al Pesto",
+      "description": "Nudelgericht mit Pesto und Pinienkernen",
+      "price": 8.50,
+      "image": "img/nudeln1.jpg"
+    }
+  ],
+  "salad": [
+    {
+      "name": "Insalata Mista",
+      "description": "Salat mit Blattsalat und Tomaten",
+      "price": 5.00,
+      "image": "img/salad1.jpg"
+    },
+    {
+      "name": "Insalata Caprese",
+      "description": "Salat mit Mozzarella und Tomaten",
+      "price": 6.50,
+      "image": "img/salad1.jpg"
+    },
+    {
+      "name": "Rucola-Salat",
+      "description": "Salat mit Rucola und Parmesan",
+      "price": 6.00,
+      "image": "img/salad1.jpg"
+    },
+    {
+      "name": "Bauernsalat",
+      "description": "Salat mit Paprika und Feta",
+      "price": 6.50,
+      "image": "img/salad1.jpg"
+    }
+  ],
+  "biere": [
+    {
+      "name": "Birra Moretti 0.5l",
+      "description": "Lagerbier",
+      "price": 3.50
+    },
+    {
+      "name": "Peroni 0.5l",
+      "description": "Pils",
+      "price": 3.80
+    },
+    {
+      "name": "Becks 0.5l",
+      "description": "Pils",
+      "price": 3.20
+    }
+  ],
+  "limonaden": [
+    {
+      "name": "San Pellegrino Orange 0.5l",
+      "description": "Limonade mit Kohlensäure",
+      "price": 2.50
+    },
+    {
+      "name": "San Pellegrino Zitrone 0.5l",
+      "description": "Limonade mit Kohlensäure",
+      "price": 2.50
+    },
+    {
+      "name": "Coca Cola 0.5l",
+      "description": "Limonade mit Kohlensäure und Coffein",
+      "price": 2.20
+    }
+  ]
+}
+  
   

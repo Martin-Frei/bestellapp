@@ -7,18 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <h1>Willkommen bei Luiggi</h1>
     </header>
-    <main>
-        <div class="menue">
+    <main class="main">
+        
+        <div class="menu-container">
+            <div class="nav">
+                <button class="button" onclick="loadMenu('pizza')">Pizza</button>
+                <button class="button" onclick="loadMenu('nudel')">Nudeln</button>
+                <button class="button" onclick="loadMenu('salad')">Salat</button>
+                <button class="button" onclick="loadMenu('bier')">Biere</button>
+                <button class="button" onclick="loadMenu('limonade')">Limonaden</button>
+            </div>
+            <div class="menu" id="menu">
+
+            </div>
             
         </div>
-        <div class="basket">
+        <div class="card">
+            <ul id="cardList">
+                
+
+            </ul>
+            <h3 is="total"> </h3>
 
         </div>
     </main>
 
 </body>
-<script src="./script.js"></script>
+<script src="script.js"></script>
 </html>

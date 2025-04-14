@@ -39,13 +39,13 @@
       "price": 9.00
     },
     {
-      "name": "Penne Arrabiata",
+      "name": "Spaghetti Arrabiata",
       "description": "Nudelgericht mit Tomaten und Chili",
       "price": 8.00,
       "image": "img/nudeln1.jpg"
     },
     {
-      "name": "Tagliatelle al Pesto",
+      "name": "Spaghetti al Pesto",
       "description": "Nudelgericht mit Pesto und Pinienkernen",
       "price": 8.50,
       "image": "img/nudeln1.jpg"
@@ -77,7 +77,7 @@
       "image": "img/salad1.jpg"
     }
   ],
-  "biere": [
+  "bier": [
     {
       "name": "Birra Moretti 0.5l",
       "description": "Lagerbier",
@@ -94,7 +94,7 @@
       "price": 3.20
     }
   ],
-  "limonaden": [
+  "limonade": [
     {
       "name": "San Pellegrino Orange 0.5l",
       "description": "Limonade mit Kohlensäure",

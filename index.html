@@ -7,34 +7,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body onload="fetchMenuItem()">
-    <header class="header">
-        <h1>Willkommen bei Luiggi</h1>
-    </header>
+    
     <main class="main">
+        <header class="header">
+            <h1>Willkommen bei Luiggi</h1>
+            <img src="./img/salad1.jpg" alt="Images salad">
+        </header>
+        <div class="nav">
+            <button class="button" onclick="loadMenu('pizza')">Pizza</button>
+            <button class="button" onclick="loadMenu('nudel')">Nudeln</button>
+            <button class="button" onclick="loadMenu('salad')">Salat</button>
+            <button class="button" onclick="loadMenu('bier')">Biere</button>
+            <button class="button" onclick="loadMenu('limonade')">Limonaden</button>
+        </div>
         
         <div class="menu-container">
-            <div class="nav">
-                <button class="button" onclick="loadMenu('pizza')">Pizza</button>
-                <button class="button" onclick="loadMenu('nudel')">Nudeln</button>
-                <button class="button" onclick="loadMenu('salad')">Salat</button>
-                <button class="button" onclick="loadMenu('bier')">Biere</button>
-                <button class="button" onclick="loadMenu('limonade')">Limonaden</button>
-            </div>
+            
             <div class="menu" id="menu">
 
             </div>
+            <div class="card">
+                <ul id="cardList">
+                 
+    
+                </ul>
+                <h3 is="total"> </h3>
+                <h2>TEST</h2> 
+            </div>
             
         </div>
-        <div class="card">
-            <ul id="cardList">
-                
-
-            </ul>
-            <h3 is="total"> </h3>
-
-        </div>
+        
     </main>
 
-</body onload="fetchMenuItem()">
+</body>
 <script src="script2.js"></script>
 </html>

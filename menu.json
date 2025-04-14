@@ -32,11 +32,12 @@
       "image": "img/pizza1.jpg"
     }
   ],
-  "nudeln": [
+  "nudel": [
     {
       "name": "Spaghetti Bolognese",
       "description": "Nudelgericht mit Hackfleischsoße und Parmesan",
-      "price": 9.00
+      "price": 9.00,
+      "image": "img/nudeln1.jpg"
     },
     {
       "name": "Spaghetti Arrabiata",
@@ -81,34 +82,40 @@
     {
       "name": "Birra Moretti 0.5l",
       "description": "Lagerbier",
-      "price": 3.50
+      "price": 3.50,
+      "image": "img/bier.jpg"
     },
     {
       "name": "Peroni 0.5l",
       "description": "Pils",
-      "price": 3.80
+      "price": 3.80,
+      "image": "img/bier.jpg"
     },
     {
       "name": "Becks 0.5l",
       "description": "Pils",
-      "price": 3.20
+      "price": 3.20,
+      "image": "img/bier.jpg"
     }
   ],
   "limonade": [
     {
       "name": "San Pellegrino Orange 0.5l",
       "description": "Limonade mit Kohlensäure",
-      "price": 2.50
+      "price": 2.50,
+      "image": "img/limonade.jpg"
     },
     {
       "name": "San Pellegrino Zitrone 0.5l",
       "description": "Limonade mit Kohlensäure",
-      "price": 2.50
+      "price": 2.50,
+      "image": "img/limonade.jpg"
     },
     {
       "name": "Coca Cola 0.5l",
       "description": "Limonade mit Kohlensäure und Coffein",
-      "price": 2.20
+      "price": 2.20,
+      "image": "img/cola.jpg"
     }
   ]
 }

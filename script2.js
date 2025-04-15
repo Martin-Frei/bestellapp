@@ -1,4 +1,5 @@
 let menuItems ={}
+let cart = []
 
 function fetchMenuItem(){
     fetch("menu.json")
@@ -30,16 +31,6 @@ function loadMenu(category = '') {
     }
 }
 
-// function loadMenu(category =''){
-//     showMenu = document.getElementById("menu");
-//     showMenu.innerHTML("");
-
-//     if ( category === ''){
-//         return Object.values(menuItems).flat(); 
-//     }
-//     showMenu.innerHTML += showDishesTemplate(category);
-// }
-
 function showDishesTemplate(item) {
     return `
         <div class="dish">
@@ -47,21 +38,74 @@ function showDishesTemplate(item) {
             <h3>${item.name}</h3>
             <p>${item.description}</p>
             <span>${item.price.toFixed(2)} €</span>
-            <button onclick="addToCard('${item.name}', ${item.price})">+</button>
+            <button onclick="addToCart('${item.name}', ${item.price})">+</button>
         </div>
     `;
 }
+        
+function addToCart(name, price) {
+    let found = false;
 
-// function showDishesTemplate(element){
-//     return  `
-//         <div class="dish">
-//         <img src="${element.image}">
-//         <h3> ${element.name}</h3>
-//         <p>${element.description}</p>
-//         <span>${element.price}</span>
-//         <button onclick="addToCard('
-//         ${element.name},${element.price}
-//         ')">+</button>                
-//         </div>
-//             ` ;
-// }           
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].name === name) {
+            cart[i].quantity += 1;
+            found = true;
+            break;
+        }
+    }
+
+    if (!found) {
+        cart.push({ name: name, price: price, quantity: 1 });
+    }
+
+    renderCart();
+}
+
+function renderCart(){
+    let showCart = document.getElementById("cartList");
+    showCart.innerHTML = "";
+    showCart.innerHTML += showCartTemplate();
+}   
+
+function showCartTemplate(){
+    let template =""
+    for (let i = 0; i < cart.length; i++) {
+        let item = cart[i];
+        let itemTotal = (item.quantity * item.price).toFixed(2);
+        template += `
+            <div class="cart-item">
+                <strong>${item.name}</strong> : 
+                ${item.quantity} × ${item.price.toFixed(2)} € = 
+                ${itemTotal} €
+                <button onclick="addToCart('${item.name},${item.price}')">+</button> 
+                <button onclick="removeFromCart('${item.name}')">-</button> 
+                <button title="Löschen" onclick="deleteItem('${item.name}')">🗑️</button>
+            </div>
+        `;
+    };
+    return template
+};
+
+function removeFromCart(name) {
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].name === name) {
+        cart[i].quantity--;
+        if (cart[i].quantity <= 0) {
+          cart.splice(i, 1);
+        }
+        break;
+      }
+    }
+    renderCart();
+}
+
+function deleteItem(name) {
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].name === name) {
+        cart.splice(i, 1);
+        break;
+        }
+    }
+    renderCart();
+}
+  

@@ -64,6 +64,8 @@ function updateCard(){
         <div class="card-item">
         <h3>${item.name}</h3>
         <span>${item.price}</span>
+        <button onclick="addToCard('${element.name},${element.price}')">+</button> 
+        <button onclick="removeFromCard('${element.name},${element.price}')">+</button>   
         </div>
         `
     })

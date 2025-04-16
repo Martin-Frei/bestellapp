@@ -1,5 +1,6 @@
 let menuItems ={}
 let cart = []
+let cartTotal = 0
 
 function fetchMenuItem(){
     fetch("menu.json")
@@ -63,15 +64,23 @@ function addToCart(name, price) {
 
 function renderCart(){
     let showCart = document.getElementById("cartList");
+    let showTotal = document.getElementById("total");
+
+    showTotal.innerHTML = "";
     showCart.innerHTML = "";
+
     showCart.innerHTML += showCartTemplate();
+    showTotal.innerHTML = cartTotal.toFixed(2) + " €";;
 }   
 
 function showCartTemplate(){
     let template =""
+    cartTotal = 0
+
     for (let i = 0; i < cart.length; i++) {
         let item = cart[i];
         let itemTotal = (item.quantity * item.price).toFixed(2);
+        cartTotal += parseFloat(itemTotal) ;
         template += `
             <div class="cart-item">
                 <strong>${item.name}</strong> : 

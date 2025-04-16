@@ -70,7 +70,7 @@ function renderCart(){
     showCart.innerHTML = "";
 
     showCart.innerHTML += showCartTemplate();
-    showTotal.innerHTML = cartTotal.toFixed(2) + " €";;
+    showTotal.innerHTML = cartTotal.toFixed(2) + " €";
 }   
 
 function showCartTemplate(){

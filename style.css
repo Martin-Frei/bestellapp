@@ -50,7 +50,7 @@ body{
     background-color: aquamarine;
     width: 40%;
     height: auto;
-    max-height: 80vh;
+    max-height: 60vh;
     overflow-y: scroll;
     position: sticky;
     top:310px;

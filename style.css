@@ -42,13 +42,13 @@ body{
     flex-direction: column;
     box-sizing: border-box;
     width: 100%;
-    max-width: 1440px;
-    align-items: center;
+    max-width: 1000px;
+    /* align-items: center; */
     padding: 0 36px 0 24px;
 }
 .cart{
     background-color: aquamarine;
-    width: 40%;
+    width: 200px;
     height: auto;
     max-height: 60vh;
     overflow-y: scroll;
@@ -56,6 +56,13 @@ body{
     top:310px;
     right: 0;
     z-index: 2;
+    text-align: end;
+    padding-right: 2px;
+}
+.cart-item{
+    font-size: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid black;
 }
 
 .menu-container{
@@ -86,8 +93,18 @@ body{
     color: white;
 }
 
+.button2{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: red;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
 .menu{
-    width: 60%;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     gap: 12px;
@@ -98,8 +115,14 @@ body{
     max-width: 400px;
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .dish img{
     width: 100%;
+}
+.text-box{
+    display: flex;
 }

@@ -13,19 +13,15 @@ function fetchMenuItem(){
     
 }
 
-
 function loadMenu(category = '') {
     let showMenu = document.getElementById("menu");
     showMenu.innerHTML = "";
-
     let items = [];
-
     if (category === '') {
         items = Object.values(menuItems).flat();
     } else if (menuItems[category]) {
         items = menuItems[category];
     }
-
     for (let index = 0; index < items.length; index++) {
         let item = items[index];
         showMenu.innerHTML += showDishesTemplate(item);
@@ -48,7 +44,6 @@ function showDishesTemplate(item) {
         
 function addToCart(name, price) {
     let found = false;
-
     for (let i = 0; i < cart.length; i++) {
         if (cart[i].name === name) {
             cart[i].quantity += 1;
@@ -56,11 +51,9 @@ function addToCart(name, price) {
             break;
         }
     }
-
     if (!found) {
         cart.push({ name: name, price: price, quantity: 1 });
     }
-
     renderCart();
 }
 
@@ -90,8 +83,7 @@ function showCartTemplate(){
                 ${itemTotal} €<br>
                 <button class="button2" title="Löschen" onclick="deleteItem('${item.name}')">🗑️</button>
                 <button class="button2" onclick="addToCart('${item.name}',${item.price})">+</button> 
-                <button class="button2" onclick="removeFromCart('${item.name}')">-</button> 
-                
+                <button class="button2" onclick="removeFromCart('${item.name}')">-</button>                 
             </div>
         `;
     };

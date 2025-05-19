@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bestellapp</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media890.css">
+    <link rel="stylesheet" href="media630.css">
+    <link rel="stylesheet" href="media290.css">
+    
 </head>
 <body onload="fetchMenuItem()">
     
@@ -20,22 +24,31 @@
             <button class="button" onclick="loadMenu('bier')">Biere</button>
             <button class="button" onclick="loadMenu('limonade')">Limonaden</button>
         </div>
-        
-        <div class="menu-container">
-            
-            <div class="menu" id="menu">
 
+        <button class="small-card" id="cartToggle">Warenkorb anzeigen</button>
+
+        <div class="cart-overlay" id="cartOverlay">
+            <div class="cart-content">
+                <button class="close-cart">&times;</button>
+                
+                <div id="cartItems"></div>
             </div>
+        </div>
+        
+        <div class="menu-container">            
+            <div class="menu" id="menu">
+            </div>
+
             <div class="cart">
-                <ul id="cartList">
-                 
-    
+                <ul id="cartList">  
                 </ul>
                 <h3 id="total"> </h3>
                 <h3>Zahlbar bei Anholung</h3> 
             </div>
             
         </div>
+        
+
         
     </main>
 

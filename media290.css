@@ -1,0 +1,40 @@
+@media screen and (max-width: 330px){
+
+.main{
+    max-width: 250px;
+    padding: 0 8px 0 8px;
+}
+
+.header{
+    height: auto;
+   
+}
+
+.header h1{
+    margin: auto 16px;
+}
+
+.header img{
+    width: 100px;
+}
+
+
+.menu-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.nav{
+    /* display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    position: sticky;
+    top: 200px;
+    left: 0;
+    z-index: 1;
+    background-color: bisque; */
+}
+
+}

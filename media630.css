@@ -1,0 +1,62 @@
+@media screen and (max-width: 630px){
+
+    .main{
+        max-width: 400px;
+        padding: 0 12px 0 12px;
+    }
+
+    .header{
+        height: auto;
+        
+    
+    }
+
+    .header h1{
+        margin: auto 30px;
+        font-size: 24px;
+    }
+
+    .header img{
+        width: 200px;
+    }
+
+
+    .menu-container{
+        width: 100%;
+        height: auto;
+        display: flex;
+    }
+
+    .nav{
+        justify-content: space-evenly;
+        padding: 20px 0;
+        flex-wrap: wrap;
+        width: 100%;
+        position: sticky;
+        top: 200px;
+        left: 0;
+        z-index: 1;
+        background-color: bisque;
+    }
+
+    .button{
+        width: 96px;
+        height: 32px;
+        font-size: 16px;
+        font-weight: normal;
+        color: white;
+    }
+
+    .menu{
+    width: 100%;
+       }
+       
+    .cart{
+        display: none;
+    }
+
+    .small-card{
+        display: block;
+    }
+
+}

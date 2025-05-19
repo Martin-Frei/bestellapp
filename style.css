@@ -15,6 +15,16 @@ body{
     overflow-x: hidden;
 }
 
+.main{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1000px;
+    /* align-items: center; */
+    padding-top: 20px;
+}
+
 .header{
     background-color: antiquewhite;
     width: 100%;
@@ -30,45 +40,12 @@ body{
 }
 
 .header h1{
-    margin: auto 30px;
+    text-align: center;
+    margin: auto;
 }
 
 .header img{
     width: 300px;
-}
-
-.main{
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 1000px;
-    /* align-items: center; */
-    padding: 0 36px 0 24px;
-}
-.cart{
-    background-color: aquamarine;
-    width: 200px;
-    height: auto;
-    max-height: 60vh;
-    overflow-y: scroll;
-    position: sticky;
-    top:310px;
-    right: 0;
-    z-index: 2;
-    text-align: end;
-    padding-right: 2px;
-}
-.cart-item{
-    font-size: 20px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid black;
-}
-
-.menu-container{
-    width: 100%;
-    height: auto;
-    display: flex;
 }
 
 .nav{
@@ -93,14 +70,10 @@ body{
     color: white;
 }
 
-.button2{
-    width: 30px;
-    height: 30px;
-    margin-top: 10px;
-    background-color: red;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
+.menu-container{
+    width: 100%;
+    height: auto;
+    display: flex;
 }
 
 .menu{
@@ -108,7 +81,7 @@ body{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
     gap: 12px;
-    padding: 20px;
+    padding-top: 20px;
 }
 
 .dish{
@@ -125,4 +98,42 @@ body{
 }
 .text-box{
     display: flex;
+    justify-content: space-between;
+}
+
+.cart{
+    /* background-color: aquamarine; */
+    width: 200px;
+    height: auto;
+    max-height: 60vh;
+    overflow-y: scroll;
+    position: sticky;
+    top:310px;
+    right: 0;
+    z-index: 2;
+    text-align: end;
+    padding-right: 2px;
+    margin-top: 20px;
+}
+
+.cart-item{
+    font-size: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid black;
+}
+
+.button2{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: red;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+.small-card{
+    display: none;
+}
+.cart-overlay{
+    display: none;
 }

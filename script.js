@@ -1,4 +1,6 @@
 let menuItems ={}
+let cart = []
+let cartTotal = 0
 
 function fetchMenuItem(){
     fetch("menu.json")
@@ -11,67 +13,103 @@ function fetchMenuItem(){
     
 }
 
-function loadMenu(category =''){
-    let items = []
-    if ( category === ''){
-        items = Object.values(menuItems).flat()    
-    }else if(menuItems[category]){
-        items= menuItems[category]
-    }else {items= []}
-
-
-    let showDishes = document.getElementById("menu")
-        showDishes.innerHTML = ""
-        items.forEach(element => {
-            showDishes.innerHTML += `
-                <div class="dish">
-                <img src="${element.image}">
-                <h3> ${element.name}</h3>
-                <p>${element.description}</p>
-                <span>${element.price}</span>
-                <button onclick="addToCard('
-                ${element.name},${element.price}
-                ')">+</button>                
-                </div>
-                 `            
-        })        
-  }     
-
-
-
-
-function showDishesTemplate(){
-
+function loadMenu(category = '') {
+    let showMenu = document.getElementById("menu");
+    showMenu.innerHTML = "";
+    let items = [];
+    if (category === '') {
+        items = Object.values(menuItems).flat();
+    } else if (menuItems[category]) {
+        items = menuItems[category];
+    }
+    for (let index = 0; index < items.length; index++) {
+        let item = items[index];
+        showMenu.innerHTML += showDishesTemplate(item);
+    }
 }
 
-let card = []
-
-function addToCard(name, price){
-    card.push({name,price})
-    updateCard();
-}
-
-function updateCard(){
-    let cardList = document.getElementById("cardList");
-    let total = document.getElementById("total");
-    let cardHTML = "TEST"
-    total = 0
-    // cardList.innerHTML ="Test"
-
-    card.forEach((item, index)=>{
-        total += item.price 
-        cardHTML += `
-        <div class="card-item">
-        <h3>${item.name}</h3>
-        <span>${item.price}</span>
-        <button onclick="addToCard('${element.name},${element.price}')">+</button> 
-        <button onclick="removeFromCard('${element.name},${element.price}')">+</button>   
+function showDishesTemplate(item) {
+    return `
+        <div class="dish">
+            <img src="${item.image}" alt="${item.name}">
+            <div class="text-box">
+                <h3>${item.name}</h3>
+                <p>${item.description}</p>
+                <span>${item.price.toFixed(2)} €</span>
+                <button class="button2" onclick="addToCart('${item.name}', ${item.price})">+</button>
+            </div>
         </div>
-        `
-    })
-    cardList.innerHTML = cardHTML
-    total.textContent= `total $${total}`
-    
+    `;
+}
+        
+function addToCart(name, price) {
+    let found = false;
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].name === name) {
+            cart[i].quantity += 1;
+            found = true;
+            break;
+        }
+    }
+    if (!found) {
+        cart.push({ name: name, price: price, quantity: 1 });
+    }
+    renderCart();
 }
 
-document.addEventListener("DOMContentLoaded",fetchMenuItem())
+function renderCart(){
+    let showCart = document.getElementById("cartList");
+    let showTotal = document.getElementById("total");
+
+    showTotal.innerHTML = "";
+    showCart.innerHTML = "";
+
+    showCart.innerHTML += showCartTemplate();
+    showTotal.innerHTML = cartTotal.toFixed(2) + " €";
+}   
+
+function showCartTemplate(){
+    let template =""
+    cartTotal = 0
+
+    for (let i = 0; i < cart.length; i++) {
+        let item = cart[i];
+        let itemTotal = (item.quantity * item.price).toFixed(2);
+        cartTotal += parseFloat(itemTotal) ;
+        template += `
+            <div class="cart-item">
+                <strong>${item.name}</strong> : <br>
+                ${item.quantity} × ${item.price.toFixed(2)} € = 
+                ${itemTotal} €<br>
+                <button class="button2" title="Löschen" onclick="deleteItem('${item.name}')">🗑️</button>
+                <button class="button2" onclick="addToCart('${item.name}',${item.price})">+</button> 
+                <button class="button2" onclick="removeFromCart('${item.name}')">-</button>                 
+            </div>
+        `;
+    };
+    return template
+};
+
+function removeFromCart(name) {
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].name === name) {
+        cart[i].quantity--;
+        if (cart[i].quantity <= 0) {
+          cart.splice(i, 1);
+        }
+        break;
+      }
+    }
+    renderCart();
+}
+
+function deleteItem(name) {
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].name === name) {
+        cart.splice(i, 1);
+        break;
+        }
+    }
+    renderCart();
+}
+  

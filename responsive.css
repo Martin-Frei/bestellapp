@@ -1,37 +1,4 @@
-@media screen and (max-width: 892px){
 
-    .main {
-    max-width: 660px;
-    padding: 0 12px;
-    }
-
-    .header h1 {
-        margin: auto;
-        font-size: 40px;
-    }
-
-    .header img {
-    width: 100%;
-    max-width: 180px;
-    }
-
-    .button {
-    width: 100px;
-    font-size: 16px;
-    }
-
-    .text-box h3{
-        font-size: 16px;
-    }
-
-    .text-box p{
-        font-size: 12px;
-    }
-
-    .text-box span{
-        font-size: 16px;
-    }
-}
 
 @media screen and (max-width: 892px){
 
@@ -68,6 +35,12 @@
     }
 }
 
+@media screen and (max-width: 400px){
+    .header h1{
+        font-size: 20px;
+        margin: 0;
+    }
+}
 @media screen and (max-width: 330px){
 
 .main{
@@ -81,7 +54,7 @@
 }
 
 .header h1{
-    margin: auto 16px;
+    margin: auto ;
 }
 
 .header img{

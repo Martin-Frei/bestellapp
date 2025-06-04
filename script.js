@@ -1,115 +1,141 @@
-let menuItems ={}
-let cart = []
-let cartTotal = 0
+let menuItems = {};
+let cart = [];
+let cartTotal = 0;
 
-function fetchMenuItem(){
-    fetch("menu.json")
-    .then(respons => respons.json())
-    .then(data => {
-        menuItems = data;
-        loadMenu()
+function fetchMenuItem() {
+  fetch("menu.json")
+    .then((respons) => respons.json())
+    .then((data) => {
+      menuItems = data;
+      loadMenu();
     })
-    .catch(error => console.error("Error", error));
-    
+    .catch((error) => console.error("Error", error));
 }
 
-function loadMenu(category = '') {
-    let showMenu = document.getElementById("menu");
-    showMenu.innerHTML = "";
-    let items = [];
-    if (category === '') {
-        items = Object.values(menuItems).flat();
-    } else if (menuItems[category]) {
-        items = menuItems[category];
-    }
-    for (let index = 0; index < items.length; index++) {
-        let item = items[index];
-        showMenu.innerHTML += showDishesTemplate(item);
-    }
+function loadMenu(category = "") {
+  let showMenu = document.getElementById("menu");
+  showMenu.innerHTML = "";
+  let items = [];
+  if (category === "") {
+    items = Object.values(menuItems).flat();
+  } else if (menuItems[category]) {
+    items = menuItems[category];
+  }
+  for (let index = 0; index < items.length; index++) {
+    let item = items[index];
+    showMenu.innerHTML += showDishesTemplate(item);
+  }
 }
 
 function showDishesTemplate(item) {
-    return `
+  return `
         <div class="dish">
             <img src="${item.image}" alt="${item.name}">
             <div class="text-box">
                 <h3>${item.name}</h3>
                 <p>${item.description}</p>
                 <span>${item.price.toFixed(2)} €</span>
-                <button class="button2" onclick="addToCart('${item.name}', ${item.price})">+</button>
+                <button class="button2" onclick="addToCart('${item.name}', ${
+    item.price
+  })">+</button>
             </div>
         </div>
     `;
 }
-        
+
 function addToCart(name, price) {
-    let found = false;
-    for (let i = 0; i < cart.length; i++) {
-        if (cart[i].name === name) {
-            cart[i].quantity += 1;
-            found = true;
-            break;
-        }
+  let found = false;
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].name === name) {
+      cart[i].quantity += 1;
+      found = true;
+      break;
     }
-    if (!found) {
-        cart.push({ name: name, price: price, quantity: 1 });
-    }
-    renderCart();
+  }
+  if (!found) {
+    cart.push({ name: name, price: price, quantity: 1 });
+  }
+  renderCart();
+  renderCartDown();
 }
 
-function renderCart(){
-    let showCart = document.getElementById("cartList");
-    let showTotal = document.getElementById("total");
+function renderCart() {
+  let showCart = document.getElementById("cartList");
+  let showTotal = document.getElementById("total");
 
-    showTotal.innerHTML = "";
-    showCart.innerHTML = "";
+  showTotal.innerHTML = "";
+  showCart.innerHTML = "";
 
-    showCart.innerHTML += showCartTemplate();
-    showTotal.innerHTML = cartTotal.toFixed(2) + " €";
-}   
+  showCart.innerHTML += showCartTemplate();
+  showTotal.innerHTML = cartTotal.toFixed(2) + " €";
+}
 
-function showCartTemplate(){
-    let template =""
-    cartTotal = 0
+function showCartTemplate() {
+  let template = "";
+  cartTotal = 0;
 
-    for (let i = 0; i < cart.length; i++) {
-        let item = cart[i];
-        let itemTotal = (item.quantity * item.price).toFixed(2);
-        cartTotal += parseFloat(itemTotal) ;
-        template += `
+  for (let i = 0; i < cart.length; i++) {
+    let item = cart[i];
+    let itemTotal = (item.quantity * item.price).toFixed(2);
+    cartTotal += parseFloat(itemTotal);
+    template += `
             <div class="cart-item">
                 <strong>${item.name}</strong> : <br>
                 ${item.quantity} × ${item.price.toFixed(2)} € = 
                 ${itemTotal} €<br>
-                <button class="button2" title="Löschen" onclick="deleteItem('${item.name}')">🗑️</button>
-                <button class="button2" onclick="addToCart('${item.name}',${item.price})">+</button> 
-                <button class="button2" onclick="removeFromCart('${item.name}')">-</button>                 
+                <button class="button2" title="Löschen" onclick="deleteItem('${
+                  item.name
+                }')">🗑️</button>
+                <button class="button2" onclick="addToCart('${item.name}',${
+      item.price
+    })">+</button> 
+                <button class="button2" onclick="removeFromCart('${
+                  item.name
+                }')">-</button>                 
             </div>
         `;
-    };
-    return template
-};
+  }
+  return template;
+}
 
 function removeFromCart(name) {
-    for (let i = 0; i < cart.length; i++) {
-      if (cart[i].name === name) {
-        cart[i].quantity--;
-        if (cart[i].quantity <= 0) {
-          cart.splice(i, 1);
-        }
-        break;
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].name === name) {
+      cart[i].quantity--;
+      if (cart[i].quantity <= 0) {
+        cart.splice(i, 1);
       }
+      break;
     }
-    renderCart();
+  }
+  renderCart();
+  renderCartDown();
 }
 
 function deleteItem(name) {
-    for (let i = 0; i < cart.length; i++) {
-        if (cart[i].name === name) {
-        cart.splice(i, 1);
-        break;
-        }
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].name === name) {
+      cart.splice(i, 1);
+      break;
     }
-    renderCart();
+  }
+  renderCart();
+  renderCartDown();
 }
-  
+
+function toggelCard() {
+  cardDown = document.getElementById("cardDown");
+  cardDown.classList.toggle("d-none");
+  renderCartDown();
+}
+
+function renderCartDown() {
+  let showCart = document.getElementById("cartListDown");
+  let showTotal = document.getElementById("totalDown");
+
+  showTotal.innerHTML = "";
+  showCart.innerHTML = "";
+
+  showCart.innerHTML += showCartTemplate();
+  showTotal.innerHTML = cartTotal.toFixed(2) + " €";
+}

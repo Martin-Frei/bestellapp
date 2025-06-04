@@ -1,83 +1,114 @@
-
-
-@media screen and (max-width: 892px){
-
-    .main {
+@media screen and (max-width: 892px) {
+  .main {
     max-width: 660px;
     padding: 0 12px;
-    }
-
-    .header h1 {
-        margin: auto;
-        font-size: 40px;
-    }
-
-    .header img {
+  }
+  .header h1 {
+    margin: auto;
+    font-size: 40px;
+  }
+  .header img {
     width: 100%;
     max-width: 180px;
-    }
-
-    .button {
+  }
+  .button {
     width: 100px;
     font-size: 16px;
-    }
+  }
+  .text-box h3 {
+    font-size: 16px;
+  }
+  .text-box p {
+    font-size: 12px;
+  }
+  .text-box span {
+    font-size: 16px;
+  }
+}
 
-    .text-box h3{
-        font-size: 16px;
+@media screen and (min-width:501px){
+    .cardDown{
+        display: none;
+    }    
+    #cartToggle{
+        display: none;
     }
-
-    .text-box p{
-        font-size: 12px;
-    }
-
-    .text-box span{
-        font-size: 16px;
+    .cart{
+        display: block;
     }
 }
 
-@media screen and (max-width: 400px){
-    .header h1{
-        font-size: 20px;
-        margin: 0;
-    }
-}
-@media screen and (max-width: 330px){
 
-.main{
+
+@media screen and (max-width: 500px) {
+  #cartToggle {
+    display: block;
+  }
+  .header h1 {
+    font-size: 20px;
+    margin: auto;
+  }
+  .cart {
+    display: none;
+  }
+  .dish img {
+    width: 100%;    
+  }
+  .menu-container {
+    flex-direction: column;
+  }
+  .menu {
+    width: 100%;
+    max-width: 500px;
+  }
+  .cardDown {
+    width: 100%;
+    height: 59vh;
+    position: sticky;
+    bottom: 0;
+    background-color: rgba(243, 231, 231, 0.855);
+    overflow-y: scroll;
+  }
+  .cardDown::-webkit-scrollbar-thumb:hover {
+    background: rgb(128, 0, 0);
+  }
+  .cardDown::-webkit-scrollbar-thumb {
+    background: rgb(180, 0, 0);
+    border-radius: 10px;
+  }
+  .cardDown::-webkit-scrollbar {
+    width: 12px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .main {
     max-width: 250px;
     padding: 0 8px 0 8px;
-}
-
-.header{
+  }
+  .header {
     height: auto;
-   
-}
-
-.header h1{
-    margin: auto ;
-}
-
-.header img{
+  }
+  .header h1 {
+    margin: auto;
+  }
+  .header img {
     width: 100px;
-}
-
-
-.menu-container{
+  }
+  .menu-container {
     width: 100%;
     height: auto;
     display: flex;
-}
-
-/* .nav{
+  }
+  .nav {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     width: 100%;
     position: sticky;
-    top: 200px;
+    top: 100px;
     left: 0;
     z-index: 1;
     background-color: bisque;
-} */
-
+  }
 }

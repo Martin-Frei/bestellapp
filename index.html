@@ -6,6 +6,7 @@
     <title>Bestellapp</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="responsive.css" />
+    <link rel="icon" type="img/png" href="it.png">
   </head>
   <body onload="fetchMenuItem()">
     <main class="main">
@@ -39,7 +40,7 @@
         <div class="cart">
           <ul id="cartList"></ul>
           <h3 id="total"></h3>
-          <h3>Zahlbar bei Anholung</h3>
+          <button class="button" onclick="send()">send</button>
         </div>
       </div>
       <div class="cardDown d-none" id="cardDown">
@@ -47,7 +48,7 @@
         <div id="cartListDown"></div>
         <div>
           <h3 id="totalDown"></h3>
-          <h3>Zahlbar bei Anholung</h3>
+          <button class="button" onclick="sendDown()">send</button>
         </div>
       </div>
       <div class="end">
@@ -59,5 +60,6 @@
       </div>
     </main>
   </body>
-  <script src="script.js"></script>
+  <script src="./templates.js"></script>
+  <script src="./script.js"></script>  
 </html>

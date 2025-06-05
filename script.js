@@ -27,22 +27,6 @@ function loadMenu(category = "") {
   }
 }
 
-function showDishesTemplate(item) {
-  return `
-        <div class="dish">
-            <img src="${item.image}" alt="${item.name}">
-            <div class="text-box">
-                <h3>${item.name}</h3>
-                <p>${item.description}</p>
-                <span>${item.price.toFixed(2)} €</span>
-                <button class="button2" onclick="addToCart('${item.name}', ${
-    item.price
-  })">+</button>
-            </div>
-        </div>
-    `;
-}
-
 function addToCart(name, price) {
   let found = false;
   for (let i = 0; i < cart.length; i++) {
@@ -68,34 +52,6 @@ function renderCart() {
 
   showCart.innerHTML += showCartTemplate();
   showTotal.innerHTML = cartTotal.toFixed(2) + " €";
-}
-
-function showCartTemplate() {
-  let template = "";
-  cartTotal = 0;
-
-  for (let i = 0; i < cart.length; i++) {
-    let item = cart[i];
-    let itemTotal = (item.quantity * item.price).toFixed(2);
-    cartTotal += parseFloat(itemTotal);
-    template += `
-            <div class="cart-item">
-                <strong>${item.name}</strong> : <br>
-                ${item.quantity} × ${item.price.toFixed(2)} € = 
-                ${itemTotal} €<br>
-                <button class="button2" title="Löschen" onclick="deleteItem('${
-                  item.name
-                }')">🗑️</button>
-                <button class="button2" onclick="addToCart('${item.name}',${
-      item.price
-    })">+</button> 
-                <button class="button2" onclick="removeFromCart('${
-                  item.name
-                }')">-</button>                 
-            </div>
-        `;
-  }
-  return template;
 }
 
 function removeFromCart(name) {
@@ -138,4 +94,32 @@ function renderCartDown() {
 
   showCart.innerHTML += showCartTemplate();
   showTotal.innerHTML = cartTotal.toFixed(2) + " €";
+}
+
+function send() { 
+  let showCart = document.getElementById("cartList");
+  let showTotal = document.getElementById("total");
+  if (cart.length >= 1) {
+    showTotal.innerHTML = "";
+    showCart.innerHTML = "";
+    cart = [];
+    cartTotal = 0;
+    showCart.innerHTML = `<h3>Bestellung erhalten</h3><br/><h2>Danke</h2>`;
+  } else {
+    showCart.innerHTML = `<h3>Kein Artikel im Warenkorb</h3>`;
+  }    
+}
+
+function sendDown(){
+  let showCart = document.getElementById("cartListDown");
+  let showTotal = document.getElementById("totalDown");
+  if (cart.length >= 1) {
+    showTotal.innerHTML = "";
+    showCart.innerHTML = "";
+    cart = [];
+    cartTotal = 0;
+    showCart.innerHTML= `<h3>Bestellung erhalten</h3><br/><h2>Danke</h2>`
+  } else {
+    showCart.innerHTML= `<h3>Kein Artikel im Warenkorb</h2>`
+  }    
 }
